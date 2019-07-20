@@ -1,0 +1,97 @@
+import React, { Component } from 'react';
+// import './Login.css'
+import PropTypes from "prop-types";
+import { userInfo } from 'os';
+import {isHaveRoleAdmin} from "../CheckUserService"
+
+
+export class Login extends Component {
+
+//   static contextTypes = {
+//     router: PropTypes.object
+//   }
+
+  constructor(props){
+    super(props)
+    
+    this.state = {
+      ErrorMessage:""
+    }
+
+  }
+
+  componentDidMount(){
+
+  }
+
+  submitLogin(e){
+    e.preventDefault()
+
+    let email = document.getElementById("Email").value
+    let password = document.getElementById("Password").value
+    let dataOk = false;
+
+
+    var data = new FormData()
+    data.append("Email",email)
+    data.append("Password",password)
+
+
+    fetch('./Account/Login', {
+        method: 'post',
+        body: data
+    })
+    .then(data => {
+        dataOk = data.ok
+        return data.json()
+    })
+    .then(data => {    
+        if(dataOk){
+            this.setState({ErrorMessage:""})
+            document.cookie = "currentuser="+JSON.stringify(data)
+
+            console.log("sdansdsad",this.props)
+            alert("Login Success!!")
+            this.props.history.push("/");
+            this.props.login(true,true);
+        }else{
+            this.setState({ErrorMessage:data.message})
+        }
+      
+      
+        
+
+
+    })
+  }
+  
+
+  render () {
+
+    return (
+      <div className="login-container">
+        
+       <form method="post" enctype="multipart/form-data">
+
+       <div class="error-message">
+           {this.state.ErrorMessage}
+       </div>
+            
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="text" class="form-control" id="Email" placeholder="Enter Email"/>
+                
+            </div>
+            
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="text" class="form-control" id="Password" placeholder="Enter Password"/>
+            </div>
+
+            <button onClick={(e)=>this.submitLogin(e)} type="submitLogin" class="btn btn-primary">Submit</button>
+
+       </form>
+      </div>
+    );
+  }
+}

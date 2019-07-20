@@ -1,0 +1,16 @@
+.character-detail-container p{
+    font-weight: bold
+}
+
+.character-detail-container .sub-title {
+    font-style: italic;
+}
+
+.character-detail-container img{
+    position: relative;
+    border-radius: 10%;
+}
+
+.character-detail-container {
+    padding: 0;
+}

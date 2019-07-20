@@ -1,0 +1,37 @@
+#axis:hover .move-up {
+    transform: translate(0,-450px);
+    -webkit-transform: translate(0,-450px);
+    -o-transform: translate(0,-450px); 
+    -moz-transform: translate(0,-450px);
+}
+
+#axis:hover .disappear {
+    width: 0px;
+}
+
+#rocket {
+    top: 65%;
+    left: 75%;
+}
+
+.object {
+    position: fixed;
+    transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+}
+
+#space {
+    width: 200px;
+    height: 200px;
+    top: 65%;
+    left: 85%;
+    background-color: red;
+    position: fixed;
+    -webkit-transition: width 1s;
+    transition: width 1s;
+    z-index: -1;
+
+
+}

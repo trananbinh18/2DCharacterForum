@@ -1,0 +1,33 @@
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 30px;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+}
+
+.grid-item img{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    -webkit-transition: width 2s;
+    transition: width 2s;
+    border-radius: 50%;
+   
+}
+
+@keyframes exampleAnimation {
+    0%   {background: red; left: 0px; top: 0px;}
+  25%  {background: yellow; left: 200px; top: 0px;}
+  50%  {background: blue; left: 200px; top: 200px;}
+  75%  {background: green; left: 0px; top: 200px;}
+  100% {background: red; left: 0px; top: 0px;}
+  }
+
+.grid-item img:hover{
+    width: 300px;
+}
+
+.grid-item p{
+    min-width: 300px;
+}

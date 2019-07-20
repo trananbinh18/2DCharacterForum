@@ -1,0 +1,26 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    padding: 10px;
+    align-content: center;
+}
+
+.home-container {
+    align-content: center;
+}
+
+.paging-bar {
+    position: absolute;
+    top: 400px;
+    left: 450px;
+}
+
+.paging-bar img {
+    width: 100px;
+    height: 100px;
+}
+
+.paging-bar img:hover {
+    width: 120px;
+    height: 120px;
+}

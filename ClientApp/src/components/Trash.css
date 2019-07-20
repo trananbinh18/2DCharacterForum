@@ -1,0 +1,12 @@
+.trash-field img{
+    width: 600px;
+    height: 250px;
+    z-index: -1
+}
+
+.trash-field {
+    position: absolute;
+    top: 500px;
+    left:200px;
+    z-index: -1;
+}
